@@ -17,8 +17,7 @@ These rows contained only 1% of the dataset so dropping them will not be an issu
 Further analysis involved checking for and handling punctuations as they will later be handled by TF-IDF.
 
 #### Text preprocessing
-Text preprocessing involves vectorizing the text using the TF-IDF (Term Frequency-Inverse Document Frequency) method. 
-Unigrams, bigrams, and chi-squared scores are used for feature selection. 
+Text preprocessing involves vectorizing the text using the TF-IDF (Term Frequency-Inverse Document Frequency) method.  
 The most correlated unigrams and bigrams are displayed along with example texts. 
 TF-IDF is implemented and the column text is tokenized in German, stopwords are removed, and a WordCloud is generated to visualize the most frequent words accross the dataset.
 
@@ -47,7 +46,7 @@ Recommendation on `Text Pre-processing step`:
 ### Step 2 - Implement Fast API that serves predictions with your model from step 1.
 
 This documentation explains the FastAPI application developed for making NLP predictions based on a pre-trained machine learning model we created and saved on a specific path. 
-The application utilizes the FastAPI framework to create a simple web service that classifies input text into predefined categories like >> feature:zucker ==> label:`ft`.
+The application utilizes the FastAPI framework to create a simple web service that classifies input text into predefined categories like >> `feature: zucker ==> label: ft`.
 
 **File structure:**
 main.py: This script contains the FastAPI application code, model loading, and prediction.
@@ -71,5 +70,4 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{"text": "zucker"}'
 
-The response that you get out of the request, will contain the label classification that the model will make, based on the text property that you send via POST, example: {"classification_result":"ft"}
-And last, if we want we can stop the FastAPI by typing Ctrl + C in the terminal.
+The response that you get out of the request, will contain the label classification that the model will make, based on the text property that you send via POST, example: {"classification_result": "ft"}
