@@ -64,10 +64,11 @@ Regarding dependencies and libraries we have installed:
 - In order to be able to utilize the model, you would need to send a POST request to the following endpoint >> /nlp-predictions.
 - The post request that you'll need to sent will have to look like the following:
 
+```
 curl -X 'POST' \
   'http://127.0.0.1:8000/nlp-predictions' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{"text": "zucker"}'
-
+```
 The response that you get out of the request, will contain the label classification that the model will make, based on the text property that you send via POST, example: {"classification_result": "ft"}
